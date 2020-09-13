@@ -37,3 +37,7 @@ yarn-debug.log*
 
 # Ignore .env files
 *.env
+
+# Ignore config files for solargraph
+/config/definitions.rb
+.solargraph.yml
