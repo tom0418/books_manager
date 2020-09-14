@@ -17,7 +17,6 @@ gem 'mysql2', '>= 0.4.4'
 gem 'redis', '~> 4.0'
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
-gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
 gem 'pundit', '~> 2.1'
 gem 'administrate', '~> 0.14.0'
 
