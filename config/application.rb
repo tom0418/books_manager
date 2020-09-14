@@ -33,6 +33,9 @@ module BooksManagerApp
     # i18n
     config.i18n.default_locale = :ja
 
+    # Zeitwerk $LOAD_PATHにPathを追加しない(Zeitwerk有効時false推奨)
+    config.add_autoload_paths_to_load_path = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
