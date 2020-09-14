@@ -22,6 +22,7 @@ gem 'pundit', '~> 2.1'
 gem 'administrate', '~> 0.14.0'
 
 gem 'hamlit-rails', '~> 0.2.3'
+gem 'html2haml', '~> 2.2'
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.2.0'
 
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
