@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   VALID_PASSWORD_REGEXP = /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)\w{8,12}\z/.freeze
-  VALID_NAME_REGEXP = /\A[a-zA-Zぁ-んァ-ン一-龥]+\z/.freeze
+  VALID_NAME_REGEXP = /\A[ぁ-んァ-ヶー一-龠]+\z/.freeze
 
   validates :email, presence: true,
                     length: { maximum: 254 },
