@@ -16,7 +16,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true,
                        format: { with: VALID_PASSWORD_REGEXP },
-                       confirmation: true
+                       confirmation: true, on: :update
   validates :first_name, presence: true,
                          length: { maximum: 30 },
                          format: { with: VALID_NAME_REGEXP }
