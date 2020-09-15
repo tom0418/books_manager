@@ -6,16 +6,21 @@
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    = f.label :first_name
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.text_field :first_name, autofocus: true, autocomplete: "first_name"
   .field
-    = f.label :password_confirmation
+    = f.label :last_name
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    = f.text_field :last_name, autofocus: true, autocomplete: "last_name"
+  .field
+    = f.label :admin
+    %br/
+    = f.check_box :admin, {}, true, false
+  .field
+    = f.label :department_id
+    %br/
+    = f.select :department_id, User.department_ids.keys, autofocus: true
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

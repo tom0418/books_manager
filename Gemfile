@@ -17,7 +17,6 @@ gem 'mysql2', '>= 0.4.4'
 gem 'redis', '~> 4.0'
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
-gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
 gem 'pundit', '~> 2.1'
 gem 'administrate', '~> 0.14.0'
 
@@ -26,7 +25,6 @@ gem 'html2haml', '~> 2.2'
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.2.0'
 
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
-gem 'devise-i18n-views', '~> 0.3.7'
 gem 'rails-i18n', '~> 6.0'
 
 gem 'rack-attack', '~> 6.3', '>= 6.3.1'
