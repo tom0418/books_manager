@@ -39,8 +39,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     email
-    first_name
     last_name
+    first_name
     admin
     department_id
   ].freeze
