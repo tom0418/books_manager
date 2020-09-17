@@ -1,0 +1,8 @@
+ja:
+  helpers:
+    label:
+      user:
+        first_name: "名"
+        last_name: "姓"
+        admin: 管理者権限
+        department_id: 所属部署
