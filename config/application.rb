@@ -32,6 +32,7 @@ module BooksManagerApp
 
     # i18n
     config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.{rb,yml}").to_s]
 
     # Zeitwerk $LOAD_PATHにPathを追加しない(Zeitwerk有効時false推奨)
     config.add_autoload_paths_to_load_path = false

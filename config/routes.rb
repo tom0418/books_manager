@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     patch "users/confirmation", to: "users/confirmations#confirm"
   end
 
+  namespace :admin do
+    resources :users
+
+    root to: "users#index"
+  end
+
   resources :users
 end
