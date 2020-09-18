@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   subject { user }
 
-  let!(:user) { build(:user) }
+  let!(:department) { create(:department) }
+  let!(:user) { build(:user, department_id: department.id) }
 
   describe "email validation" do
     context "when 'email' is empty" do
@@ -74,47 +75,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe "password validation" do
-  #   context "when 'password' is empty" do
-  #     before { user.password = "" }
-
-  #     it { is_expected.to be_invalid }
-  #   end
-
-  #   context "when 'password' is not empty" do
-  #     it { is_expected.to be_valid }
-  #   end
-
-  #   context "when password is in invalid format" do
-  #     invalid_passwords = %w[
-  #       7Abcdef
-  #       13Abcdefghijk
-  #       aaaaaaaa
-  #       8aaaaaaa
-  #       8AAAAAAA
-  #     ]
-
-  #     it "is invalid" do
-  #       invalid_passwords.each do |invalid_password|
-  #         user.password = invalid_password
-  #         expect(user).to be_invalid
-  #       end
-  #     end
-  #   end
-
-  #   context "when password is in valid format" do
-  #     valid_passwords = %w[
-  #       8Abcdefg
-  #       12Abcdefghij
-  #     ]
-
-  #     it "is valid" do
-  #       valid_passwords.each do |valid_password|
-  #         user.password = valid_password
-  #         expect(user).to be_valid
-  #       end
-  #     end
-  #   end
   describe "first_name validation" do
     context "when 'first_name' is empty" do
       before { user.first_name = "" }
@@ -136,37 +96,6 @@ RSpec.describe User, type: :model do
       before { user.first_name = "あ" * 30 }
 
       it { is_expected.to be_valid }
-    end
-
-    context "when first_name is in invalid format" do
-      invalid_first_names = %w[
-        １１１１１１
-        user
-        あああ！！
-        テスト\ ユーザー
-      ]
-
-      it "is invalid" do
-        invalid_first_names.each do |invalid_first_name|
-          user.first_name = invalid_first_name
-          expect(user).to be_invalid
-        end
-      end
-    end
-
-    context "when first_name is in valid format" do
-      valid_first_names = %w[
-        ユーザー
-        利用者
-        り用シャ
-      ]
-
-      it "is valid" do
-        valid_first_names.each do |valid_first_name|
-          user.first_name = valid_first_name
-          expect(user).to be_valid
-        end
-      end
     end
   end
 
@@ -191,37 +120,6 @@ RSpec.describe User, type: :model do
       before { user.last_name = "あ" * 30 }
 
       it { is_expected.to be_valid }
-    end
-
-    context "when last_name is in invalid format" do
-      invalid_last_names = %w[
-        １１１１１１
-        user
-        あああ！！
-        テスト\ ユーザー
-      ]
-
-      it "is invalid" do
-        invalid_last_names.each do |invalid_last_name|
-          user.last_name = invalid_last_name
-          expect(user).to be_invalid
-        end
-      end
-    end
-
-    context "when last_name is in valid format" do
-      valid_last_names = %w[
-        ユーザー
-        利用者
-        り用シャ
-      ]
-
-      it "is valid" do
-        valid_last_names.each do |valid_last_name|
-          user.last_name = valid_last_name
-          expect(user).to be_valid
-        end
-      end
     end
   end
 end

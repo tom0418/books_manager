@@ -1,9 +1,9 @@
 class RegistrationsPolicy < ApplicaitonPolicy
   def new?
-    user.admin? or !record.published?
+    user.admin?
   end
 
   def create?
-    user.admin? or !record.published?
+    user.admin?
   end
 end

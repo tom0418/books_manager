@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_075634) do
+ActiveRecord::Schema.define(version: 2020_09_17_215150) do
+
+  create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "department_name", default: "", null: false
+    t.string "manager_name", default: "", null: false
+    t.text "description", size: :tiny
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -18,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_09_14_075634) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.boolean "admin", default: false, null: false
-    t.integer "department_id", default: 1, null: false
+    t.bigint "department_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -33,8 +41,10 @@ ActiveRecord::Schema.define(version: 2020_09_14_075634) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "users", "departments"
 end
