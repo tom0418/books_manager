@@ -5,6 +5,6 @@ FactoryBot.define do
     first_name { "ユーザー" }
     last_name { "テスト" }
     admin { 1 }
-    department_id { 1 }
+    department
   end
 end

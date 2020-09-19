@@ -1,0 +1,43 @@
+ja:
+  administrate:
+    actions:
+      confirm: 本当によろしいですか？
+      destroy: 削除
+      edit: 編集
+      edit_resource: "%{name} 編集"
+      show_resource: "%{name} 詳細"
+      new_resource: "%{name}新規作成"
+      back: 戻る
+      back_show_resource: 詳細に戻る
+    controller:
+      create:
+        success: "%{resource}を作成しました。"
+      destroy:
+        success: "%{resource}を削除しました。"
+      update:
+        success: "%{resource}を更新しました。"
+    fields:
+      has_many:
+        more: "%{total_count} 件中 %{count} 件表示"
+        none: データがありません
+    form:
+      error: エラー
+      errors: "%{pluralized_errors}のため%{resource_name}を保存できません。"
+    navigation:
+      back_to_app: アプリに戻る
+    search:
+      clear: 検索をクリアする
+      label: "%{resource} 検索"
+  helpers:
+    label:
+      user:
+        first_name: "名"
+        last_name: "姓"
+        admin: 管理者権限
+        department_id: 所属部署
+      department:
+        id: "部署id"
+        department_name: "部署名"
+        manager_name: "部長名"
+        description: "部署詳細"
+        users: "所属社員"
