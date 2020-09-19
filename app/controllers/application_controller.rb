@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  after_aciton :verify_authorized
+  after_action :verify_authorized
 
   def after_sign_in_path_for(resource)
     if resource.admin?

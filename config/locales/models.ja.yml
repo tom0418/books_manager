@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      department: 部署
+    attributes:
+      department:
+        id: "ID"
+        department_name: "部署名"
+        manager_name: "部長"
