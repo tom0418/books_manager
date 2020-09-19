@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
-
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   devise_for :users, controllers: {
@@ -9,6 +7,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    root to: "devise/sessions#new"
     patch "users/confirmation", to: "users/confirmations#confirm"
   end
 
