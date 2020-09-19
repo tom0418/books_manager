@@ -6,4 +6,5 @@ ja:
       department:
         id: "ID"
         department_name: "部署名"
-        manager_name: "部長"
+        manager_name: "部長名"
+        description: "部署詳細"

@@ -22,4 +22,9 @@ class User < ApplicationRecord
                         length: { maximum: 30 }
   validates :admin, presence: true
   validates :department_id, presence: true
+
+  # ユーザのフルネームを返す
+  def full_name
+    "#{last_name} #{first_name}"
+  end
 end

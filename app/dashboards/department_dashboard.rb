@@ -32,23 +32,22 @@ class DepartmentDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    users
     id
     department_name
     manager_name
     description
     created_at
     updated_at
+    users
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  users
-  department_name
-  manager_name
-  description
+    department_name
+    manager_name
+    description
   ].freeze
 
   # COLLECTION_FILTERS

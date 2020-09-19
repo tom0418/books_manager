@@ -85,7 +85,18 @@ module Administrate::ApplicationHelper
     when "department"
       "#{Department.model_name.human}新規作成"
     else
-      undefind
+      "undefind"
+    end
+  end
+
+  def convert_header_text(page)
+    case page.resource_name
+    when "user"
+      page.resource.full_name
+    when "department"
+      page.resource.department_name
+    else
+      "undefind"
     end
   end
 

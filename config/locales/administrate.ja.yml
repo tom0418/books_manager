@@ -4,10 +4,11 @@ ja:
       confirm: 本当によろしいですか？
       destroy: 削除
       edit: 編集
-      edit_resource: 編集 %{name}
-      show_resource: 参照 %{name}
-      new_resource:  新規 %{name}
+      edit_resource: "%{name} 編集"
+      show_resource: "%{name} 詳細"
+      new_resource: "%{name}新規作成"
       back: 戻る
+      back_show_resource: 詳細に戻る
     controller:
       create:
         success: "%{resource}を作成しました。"
@@ -37,5 +38,6 @@ ja:
       department:
         id: "部署id"
         department_name: "部署名"
-        manager_name: "部長"
-        users: "所属人数"
+        manager_name: "部長名"
+        description: "部署詳細"
+        users: "所属社員"
