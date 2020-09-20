@@ -114,6 +114,13 @@ module Administrate::ApplicationHelper
     end
   end
 
+  # fieldがhas_manyだった場合の表示変更
+  def convert_attribute_has_many(field)
+    if field.associated_class == User
+      "#{field.data.size}人"
+    end
+  end
+
   private
 
   def default_resource_name(resource_name)
