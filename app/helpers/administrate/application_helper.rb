@@ -102,9 +102,16 @@ module Administrate::ApplicationHelper
     end
   end
 
-  # attributeが'admin'だった場合、'管理者/一般'と表示
+  # fieldが'admin'だった場合、'管理者/一般'と表示
   def convert_attribute_admin(field)
     field.to_s == "true" ? "管理者" : "一般"
+  end
+
+  # fieldがbelongs_toだった場合の表示変更
+  def convert_attribute_belongs_to(field)
+    if field.data.class == Department
+      field.data.department_name
+    end
   end
 
   private
