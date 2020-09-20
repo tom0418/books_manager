@@ -8,13 +8,13 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    department: Field::BelongsTo,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
     first_name: Field::String,
     last_name: Field::String,
     admin: Field::Boolean,
-    department_id: Field::Number,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
@@ -42,7 +42,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_name
     first_name
     admin
-    department_id
+    department
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -53,14 +53,8 @@ class UserDashboard < Administrate::BaseDashboard
     first_name
     last_name
     admin
-    department_id
-    sign_in_count
-    current_sign_in_at
-    last_sign_in_at
-    current_sign_in_ip
-    last_sign_in_ip
+    department
     confirmed_at
-    confirmation_sent_at
     created_at
     updated_at
   ].freeze
@@ -73,7 +67,7 @@ class UserDashboard < Administrate::BaseDashboard
     first_name
     last_name
     admin
-    department_id
+    department
   ].freeze
 
   # COLLECTION_FILTERS

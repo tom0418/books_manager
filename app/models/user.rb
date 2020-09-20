@@ -20,7 +20,6 @@ class User < ApplicationRecord
                          length: { maximum: 30 }
   validates :last_name, presence: true,
                         length: { maximum: 30 }
-  validates :admin, presence: true
   validates :department_id, presence: true
 
   # ユーザのフルネームを返す
