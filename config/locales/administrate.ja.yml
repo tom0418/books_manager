@@ -44,3 +44,5 @@ ja:
         manager_name: 部長名
         description: 部署詳細
         users: 所属社員
+        created_at: 作成日時
+        updated_at: 最終更新日
