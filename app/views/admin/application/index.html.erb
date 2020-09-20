@@ -42,7 +42,7 @@ It renders the `_table` partial to display details about the resources.
 
   <div>
     <%= link_to(
-      convert_new_button_label(page),
+      convert_new_button_text(page),
       [:new, namespace, page.resource_path],
       class: "button",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>

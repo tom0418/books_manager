@@ -30,7 +30,7 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
     models:
-      user: ユーザ
+      user: 社員
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
