@@ -2,9 +2,15 @@ ja:
   activerecord:
     models:
       department: 部署
+      book: 書籍
     attributes:
       department:
-        id: "ID"
-        department_name: "部署名"
-        manager_name: "部長名"
-        description: "部署詳細"
+        id: ID
+        department_name: 部署名
+        manager_name: 部長名
+        description: 部署詳細
+      book:
+        id: ID
+        title: タイトル
+        author: 著者名
+        publisher: 出版社

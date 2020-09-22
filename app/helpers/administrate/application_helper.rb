@@ -85,6 +85,8 @@ module Administrate::ApplicationHelper
       "#{User.model_name.human}新規作成"
     when "department"
       "#{Department.model_name.human}新規作成"
+    when "book"
+      "#{Book.model_name.human}新規作成"
     else
       "undefind"
     end
@@ -97,6 +99,8 @@ module Administrate::ApplicationHelper
       page.resource.full_name
     when "department"
       page.resource.department_name
+    when "book"
+      page.resource.title
     else
       "undefind"
     end

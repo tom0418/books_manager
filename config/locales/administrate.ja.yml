@@ -46,3 +46,15 @@ ja:
         users: 所属社員
         created_at: 作成日時
         updated_at: 最終更新日
+      book:
+        id: 書籍ID
+        title: タイトル
+        author: 著者名
+        publisher: 出版社
+        published_date: 発売日
+        isbn_10: ISBN-10
+        isbn_13: ISBN-13
+        description: 書籍詳細
+        quantity: 所蔵数
+        created_at: 作成日時
+        updated_at: 最終更新日
