@@ -84,3 +84,24 @@ end
     confirmed_at: Time.zone.now
   )
 end
+
+# books
+50.times do |n|
+  title = "#{Faker::Book.title} #{n + 1}"
+  author = Faker::Book.author
+  publisher = Faker::Book.publisher
+  published_date = "2019-01-01"
+  isbn10 = 4_000_000_000 + n + 1
+  isbn13 = 9_000_000_000_000 + n + 1
+  description = Faker::Books::Dune.quote
+
+  Book.create!(
+    title: title,
+    author: author,
+    publisher: publisher,
+    published_date: published_date,
+    isbn_10: isbn10,
+    isbn_13: isbn13,
+    description: description
+  )
+end

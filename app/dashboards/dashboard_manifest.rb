@@ -1,7 +1,8 @@
 class DashbordManifest
   DASHBOARDS = [
     :users,
-    :departments
+    :departments,
+    :books
   ]
 
   ROOT_DASHBOARD = DASHBOARDS.first
