@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  has_many :collections, dependent: :destroy
+
   validates :title, presence: true,
                     uniqueness: true
   validates :author, presence: true
