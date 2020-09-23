@@ -105,3 +105,16 @@ end
     description: description
   )
 end
+
+# collections
+book = Book.find_by(id: 1)
+
+5.times do |n|
+  collection_code = "#{book.id}-#{n + 1}"
+  status = true
+
+  book.collections.create!(
+    collection_code: collection_code,
+    status: status
+  )
+end

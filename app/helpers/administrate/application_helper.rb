@@ -113,9 +113,8 @@ module Administrate::ApplicationHelper
 
   # fieldがbelongs_toだった場合の表示変更
   def convert_attribute_belongs_to(field)
-    if field.data.class == Department
-      field.data.department_name
-    end
+    field.data.department_name if field.data.class == Department
+    # field.data.title if field.data.class == Book
   end
 
   # fieldがhas_manyだった場合の表示変更

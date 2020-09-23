@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class BookDashboard < Administrate::BaseDashboard
+class CollectionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,16 +8,10 @@ class BookDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    collections: Field::HasMany,
+    book: Field::BelongsTo,
     id: Field::Number,
-    title: Field::String,
-    author: Field::String,
-    publisher: Field::String,
-    published_date: Field::String,
-    isbn_10: Field::Number,
-    isbn_13: Field::Number,
-    description: Field::Text,
-    quantity: Field::Number,
+    collection_code: Field::String,
+    status: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,41 +22,27 @@ class BookDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
-    title
-    author
-    publisher
+    collection_code
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    id
-    title
-    author
-    publisher
-    published_date
-    isbn_10
-    isbn_13
-    description
-    quantity
+    book
+    collection_code
+    status
     created_at
     updated_at
-    collections
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    title
-    author
-    publisher
-    published_date
-    isbn_10
-    isbn_13
-    description
-    quantity
+    book
+    collection_code
+    status
   ].freeze
 
   # COLLECTION_FILTERS
@@ -77,10 +57,10 @@ class BookDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how books are displayed
+  # Overwrite this method to customize how collections are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(book)
-  #   "Book ##{book.id}"
+  # def display_resource(collection)
+  #   "Collection ##{collection.id}"
   # end
 end
