@@ -1,10 +1,10 @@
-class BookPolicy < ApplicationPolicy
+class CollectionPolicy < ApplicationPolicy
   def index?
-    true
+    user.admin?
   end
 
   def show?
-    true
+    false
   end
 
   def create?
@@ -24,10 +24,6 @@ class BookPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin?
-  end
-
-  def search?
     user.admin?
   end
 end

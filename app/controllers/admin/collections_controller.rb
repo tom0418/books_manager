@@ -1,5 +1,5 @@
 module Admin
-  class BooksController < Admin::ApplicationController
+  class CollectionsController < Admin::ApplicationController
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
@@ -42,44 +42,5 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
-
-    def create
-      resource = resource_class.new(resource_params)
-      authorize_resource(resource)
-
-      if resource.save
-        create_collection(resource)
-        redirect_to(
-          [namespace, resource],
-          notice: translate_with_resource("create.success")
-        )
-      else
-        render :new, locals: {
-          page: Administrate::Page::Form.new(dashboard, resource)
-        }
-      end
-    end
-
-    def search
-      google_book_data = GoogleBook.search(params[:keyword])
-      resource = resource_class.new
-      resource = resource.substitute_for_googlebook(google_book_data)
-      authorize_resource(resource)
-
-      render :new, locals: {
-        page: Administrate::Page::Form.new(dashboard, resource)
-      }
-    end
-
-    private
-
-    def create_collection(resource)
-      quantities = resource.quantity
-
-      quantities.times do |quantity|
-        collection_code = "#{resource.id}-#{quantity + 1}"
-        resource.collections.create(collection_code: collection_code)
-      end
-    end
   end
 end

@@ -42,20 +42,6 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  describe "'publisher' validations" do
-    context "when 'publisher' is empty" do
-      before { book.publisher = "" }
-
-      it { is_expected.to be_invalid }
-    end
-
-    context "when 'publisher' is not empty" do
-      before { book.publisher = "not empty" }
-
-      it { is_expected.to be_valid }
-    end
-  end
-
   describe "'published_date' validations" do
     context "when 'published_date' is empty" do
       before { book.published_date = "" }

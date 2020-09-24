@@ -89,7 +89,6 @@ end
 50.times do |n|
   title = "#{Faker::Book.title} #{n + 1}"
   author = Faker::Book.author
-  publisher = Faker::Book.publisher
   published_date = "2019-01-01"
   isbn10 = 4_000_000_000 + n + 1
   isbn13 = 9_000_000_000_000 + n + 1
@@ -98,10 +97,22 @@ end
   Book.create!(
     title: title,
     author: author,
-    publisher: publisher,
     published_date: published_date,
     isbn_10: isbn10,
     isbn_13: isbn13,
     description: description
+  )
+end
+
+# collections
+book = Book.find_by(id: 1)
+
+5.times do |n|
+  collection_code = "#{book.id}-#{n + 1}"
+  status = true
+
+  book.collections.create!(
+    collection_code: collection_code,
+    status: status
   )
 end
