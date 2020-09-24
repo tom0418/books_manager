@@ -3,7 +3,6 @@ class CreateBooks < ActiveRecord::Migration[6.0]
     create_table :books do |t|
       t.string :title, null: false, default: ""
       t.string :author, null: false, default: ""
-      t.string :publisher, null: false, default: ""
       t.string :published_date, null: false, default: ""
       t.bigint :isbn_10
       t.bigint :isbn_13

@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_222347) do
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.string "author", default: "", null: false
-    t.string "publisher", default: "", null: false
     t.string "published_date", default: "", null: false
     t.bigint "isbn_10"
     t.bigint "isbn_13"

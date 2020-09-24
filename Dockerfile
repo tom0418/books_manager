@@ -21,6 +21,7 @@ RUN apk add --no-cache --virtual build-deps \
         yarn \
         tzdata \
         imagemagick6-dev \
+        less \
         git \
     && rm -rf /usr/lib/libmysqld* \
     && rm -rf /usr/bin/mysql*
