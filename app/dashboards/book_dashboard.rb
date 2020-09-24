@@ -12,7 +12,6 @@ class BookDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     author: Field::String,
-    publisher: Field::String,
     published_date: Field::String,
     isbn_10: Field::Number,
     isbn_13: Field::Number,
@@ -31,7 +30,6 @@ class BookDashboard < Administrate::BaseDashboard
     id
     title
     author
-    publisher
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,7 +38,6 @@ class BookDashboard < Administrate::BaseDashboard
     id
     title
     author
-    publisher
     published_date
     isbn_10
     isbn_13
@@ -57,7 +54,6 @@ class BookDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     title
     author
-    publisher
     published_date
     isbn_10
     isbn_13

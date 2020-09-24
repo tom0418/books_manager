@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :departments
-    resources :books
+    resources :books do
+      get "search", on: :collection
+    end
 
     root to: "users#index"
   end

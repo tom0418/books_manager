@@ -26,4 +26,8 @@ class BookPolicy < ApplicationPolicy
   def destroy?
     user.admin?
   end
+
+  def search?
+    user.admin?
+  end
 end
