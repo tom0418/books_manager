@@ -3,6 +3,7 @@ ja:
     models:
       department: 部署
       book: 書籍
+      lended_history: 貸出履歴
     attributes:
       department:
         id: ID
@@ -14,3 +15,10 @@ ja:
         title: タイトル
         author: 著者名
         publisher: 出版社
+      lended_history:
+        id: ID
+        lended_details: 貸出明細
+        deadline: 返却期日
+        returned_at: 返却日
+        lended_quantity: 貸出冊数
+        user_id: 利用者

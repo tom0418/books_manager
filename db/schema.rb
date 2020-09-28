@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_222347) do
+ActiveRecord::Schema.define(version: 2020_09_28_062902) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "title", default: "", null: false
@@ -44,6 +44,26 @@ ActiveRecord::Schema.define(version: 2020_09_22_222347) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lended_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.bigint "lended_history_id"
+    t.bigint "collection_id"
+    t.boolean "status", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_lended_details_on_collection_id"
+    t.index ["lended_history_id"], name: "index_lended_details_on_lended_history_id"
+  end
+
+  create_table "lended_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.datetime "deadline"
+    t.datetime "returned_at"
+    t.integer "lended_quantity", default: 1, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lended_histories_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -71,5 +91,8 @@ ActiveRecord::Schema.define(version: 2020_09_22_222347) do
   end
 
   add_foreign_key "collections", "books"
+  add_foreign_key "lended_details", "collections"
+  add_foreign_key "lended_details", "lended_histories"
+  add_foreign_key "lended_histories", "users"
   add_foreign_key "users", "departments"
 end

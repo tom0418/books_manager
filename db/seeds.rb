@@ -116,3 +116,24 @@ book = Book.find_by(id: 1)
     status: status
   )
 end
+
+# lended_histories
+user = User.find_by(id: 1)
+now = Time.current
+
+user.lended_histories.create!(
+  deadline: now.weeks_since(1),
+  returned_at: now.since(3.days),
+  lended_quantity: 5
+)
+
+# lended_details
+lended_history = LendedHistory.first
+collections = Collection.all
+
+collections.each do |collection|
+  lended_history.lended_details.create!(
+    collection_id: collection.id,
+    status: true
+  )
+end
