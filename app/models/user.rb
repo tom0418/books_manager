@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :confirmable
 
   belongs_to :department
+  has_many :lended_histories, dependent: :nullify
 
   VALID_EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   VALID_PASSWORD_REGEXP = /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)\w{8,12}\z/.freeze

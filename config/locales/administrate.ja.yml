@@ -58,3 +58,9 @@ ja:
         quantity: 所蔵数
         created_at: 作成日時
         updated_at: 最終更新日
+      lended_history:
+        lended_details: 貸出明細
+        deadline: 返却期日
+        returned_at: 返却日
+        lended_quantity: 貸出冊数
+        user_id: 利用者

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :books do
       get "search", on: :collection
     end
+    resources :lended_histories
 
     root to: "users#index"
   end
