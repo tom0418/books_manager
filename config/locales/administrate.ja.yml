@@ -4,8 +4,8 @@ ja:
       confirm: 本当によろしいですか？
       destroy: 削除
       edit: 編集
-      edit_resource: "%{name} 編集"
-      show_resource: "%{name} 詳細"
+      edit_resource: "%{name} - 編集"
+      show_resource: "%{name} -  詳細"
       new_resource: "%{name}新規作成"
       back: 戻る
       back_show_resource: 詳細に戻る

@@ -54,5 +54,9 @@ module BooksManagerApp
                        controller_specs: false
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
+
+    config.to_prepare do
+      Administrate::ApplicationController.helper BooksManagerApp::Application.helpers
+    end
   end
 end
