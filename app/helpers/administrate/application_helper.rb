@@ -96,27 +96,36 @@ module Administrate::ApplicationHelper
 
   # h1タグのテキスト変更
   def convert_header_text(page)
-    case page.resource_name
-    when "user"
+    case resource_name
+    when :user
       page.resource.full_name
-    when "department"
+    when :department
       page.resource.department_name
-    when "book"
+    when :book
       page.resource.title
     else
       "undefind"
     end
   end
 
-  # fieldが'admin'だった場合、'管理者/一般'と表示
-  def convert_attribute_admin(field)
-    field.to_s == "true" ? "管理者" : "一般"
+  # fieldが'boolean'だった場合の表示変更
+  def convert_attribute_boolean(field)
+    case resource_name
+    when :user
+      convert_attribute_boolean_admin(field)
+    when :book
+      field.to_s == "true" ? "貸出可" : "貸出中"
+    else
+      field.to_s == "true" ? "返却済" : "未返却"
+    end
   end
 
   # fieldがbelongs_toだった場合の表示変更
   def convert_attribute_belongs_to(field)
-    field.data.department_name if field.data.class == Department
-    # field.data.title if field.data.class == Book
+    # field.data.department_name if resource_name == :user
+    if resource_name == :user
+      convert_attribute_belongs_to_department(field)
+    end
   end
 
   # fieldがhas_manyだった場合の表示変更

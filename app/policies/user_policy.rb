@@ -22,7 +22,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def new?
-    user.admin?
+    create?
   end
 
   def update?

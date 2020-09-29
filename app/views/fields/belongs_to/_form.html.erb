@@ -21,6 +21,6 @@ that displays all possible records to associate with.
 </div>
 <div class="field-unit__field">
   <%= f.select(field.permitted_attribute) do %>
-    <%= options_for_select(field.associated_resource_options, field.selected_option) %>
+    <%= options_for_select(convert_attribute_belongs_to(field), field.selected_option) %>
   <% end %>
 </div>

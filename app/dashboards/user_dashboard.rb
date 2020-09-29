@@ -50,8 +50,8 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     email
-    first_name
     last_name
+    first_name
     admin
     department
     confirmed_at
@@ -64,8 +64,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     email
-    first_name
     last_name
+    first_name
     admin
     department
   ].freeze
